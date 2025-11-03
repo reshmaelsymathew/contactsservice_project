@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "bea4fb06-e666-40ae-becb-65e209f64e3c",
+		"name": "Contacts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38512745"
+	},
+	"item": [
+		{
+			"name": "createContact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Dorothy Smith\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/hello/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/hello/contacts?nameFilter=^A.$ ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hello/contacts?nameFilter=[a-z",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello",
+						"contacts"
+					],
+					"query": [
+						{
+							"key": "nameFilter",
+							"value": "[a-z"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/hello/contacts?nameFilter=^.[aei].*$",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hello/contacts?nameFilter=^.[aei].*$",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello",
+						"contacts"
+					],
+					"query": [
+						{
+							"key": "nameFilter",
+							"value": "^.[aei].*$"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/hello/contacts?nameFilter=^A.$ -",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hello/contacts?nameFilter=^A.$ -",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello",
+						"contacts"
+					],
+					"query": [
+						{
+							"key": "nameFilter",
+							"value": "^A.$ -"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
