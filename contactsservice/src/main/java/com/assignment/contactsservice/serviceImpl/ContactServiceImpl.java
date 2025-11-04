@@ -17,6 +17,11 @@ import com.assignment.contactsservice.model.Contact;
 import com.assignment.contactsservice.repository.ContactRepository;
 import com.assignment.contactsservice.service.ContactService;
 
+/**
+ * Core business logic implementation for contact management.
+ * This class handles database interaction, event publishing, and the critical
+ * performance-oriented filtering logic.
+ */
 @Service
 public class ContactServiceImpl implements ContactService {
 
@@ -60,7 +65,7 @@ public class ContactServiceImpl implements ContactService {
 
 	/**
 	 * Retrieves contacts, excluding those whose name matches the given regex
-	 * filter. * Constraint Handling: No SQL filter: Filter is applied in the Java
+	 * filter. No SQL filter: Filter is applied in the Java
 	 * stream. Large dataset: Uses @Transactional and Stream<Contact> to avoid OOM
 	 * by processing data incrementally .
 	 * 
