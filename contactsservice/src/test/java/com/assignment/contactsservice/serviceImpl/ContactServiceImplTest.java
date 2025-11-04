@@ -47,7 +47,7 @@ class ContactServiceImplTest {
 
     @BeforeEach
     void setUp() {
-        // Setup a contact object used for creation tests (ID is null as it's not yet saved)
+        // Setup a contact object used for creation tests 
         contactRequest = new Contact(null, "TestName");
         
         // Setup a sample dataset for filtering tests
@@ -60,9 +60,6 @@ class ContactServiceImplTest {
         log.info("Test setup complete. Sample data initialized.");
     }
 
-    // =======================================================================
-    //                              createContact Tests
-    // =======================================================================
 
     /**
      * Tests the core flow of creating a contact: saving to DB and publishing an event.
@@ -71,7 +68,7 @@ class ContactServiceImplTest {
     void createContact_SavesAndPublishesEvent() {
         log.info("Running test: createContact_SavesAndPublishesEvent");
         
-        // Arrange: Define the contact the repository should "return" after saving (with a generated ID)
+        //  Define the contact the repository should "return" after saving (with a generated ID)
         Contact savedContact = new Contact(10L, "TestName");
         when(contactRepository.save(any(Contact.class))).thenReturn(savedContact);
 
@@ -91,9 +88,6 @@ class ContactServiceImplTest {
         log.info("Test passed: Contact saved and event publishing verified.");
     }
 
-    // =======================================================================
-    //                           getContactsExcludingRegex Tests
-    // =======================================================================
 
     /**
      * Tests the Java-side filtering logic to ensure non-matching contacts are returned.
