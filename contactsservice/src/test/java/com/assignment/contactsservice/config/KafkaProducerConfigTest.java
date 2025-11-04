@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Integration test for the KafkaProducerConfig class to verify that the
  * configuration beans are correctly initialized using injected properties.
- * * We use @SpringBootTest to load the application context and @TestPropertySource
+ * use @SpringBootTest to load the application context and @TestPropertySource
  * to override configuration values in application.properties with mock values.
  */
 @SpringBootTest(classes = KafkaProducerConfig.class)
